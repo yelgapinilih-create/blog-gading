@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Madiun City Blog – by Gading</title>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;700&display=swap" rel="stylesheet">
+
+<style>
+/* RESET */
+*{margin:0;padding:0;box-sizing:border-box;}
+body {
+    font-family: 'Poppins', sans-serif;
+    overflow-x: hidden;
+    background: #f5f5f5;
+    transition: 0.4s;
+}
+
+/* LOADING SCREEN */
+#loader {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    background: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 9999;
+    font-size: 28px;
+    font-weight: bold;
+    animation: fadeOut 1s forwards;
+    animation-delay: 1.5s;
+}
+@keyframes fadeOut {
+    to { opacity: 0; visibility: hidden; }
+}
+
+/* HERO SECTION */
+.hero {
+    height: 70vh;
+    background: url('https://upload.wikimedia.org/wikipedia/commons/5/5f/Alun-alun_Madiun.jpg');
+    background-size: cover;
+    background-attachment: fixed;
+    background-position: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: white;
+    text-shadow: 2px 2px 10px black;
+}
+.hero h1 {
+    font-size: 55px;
+    animation: fadeDown 1.3s ease;
+}
+@keyframes fadeDown {
+    from {opacity:0; transform:translateY(-30px);}
+    to {opacity:1; transform:translateY(0);}
+}
+
+/* SIDEBAR */
+.sidebar {
+    position: fixed;
+    top: 0; left: 0;
+    width: 250px;
+    height: 100%;
+    background: #222;
+    padding: 20px;
+    color: white;
+}
+.sidebar a {
+    display: block;
+    padding: 10px;
+    margin: 12px 0;
+    color: white;
+    text-decoration: none;
+    border-radius: 8px;
+    transition: 0.3s;
+}
+.sidebar a:hover {
+    background: #444;
+    transform: translateX(5px);
+}
+
+/* CONTENT */
+.content {
+    margin-left: 270px;
+    padding: 30px;
+}
+
+/* SECTIONS */
+section {
+    margin-bottom: 50px;
+    background: white;
+    padding: 25px;
+    border-radius: 12px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+    transition: 0.4s;
+}
+section:hover {
+    transform: translateY(-5px);
+}
+section img {
+    width: 100%;
+    border-radius: 12px;
+    margin-top: 15px;
+}
+
+/* DARK MODE */
+.dark body {
+    background: #111;
+    color: white;
+}
+.dark section {
+    background: #1b1b1b;
+    color: white;
+}
+.dark .sidebar {
+    background: black;
+}
+
+/* SCROLL TOP BUTTON */
+#toTop {
+    position: fixed;
+    right: 20px;
+    bottom: 20px;
+    padding: 15px;
+    font-size: 20px;
+    border-radius: 50%;
+    background: #f39c12;
+    border: none;
+    color: white;
+    cursor: pointer;
+    display: none;
+}
+
+/* DARK MODE BUTTON */
+#darkBtn {
+    position: fixed;
+    right: 20px;
+    top: 20px;
+    padding: 10px 20px;
+    background: black;
+    color: white;
+    border-radius: 8px;
+    z-index: 999;
+    cursor: pointer;
+}
+
+/* SLIDER */
+.slider {
+    width: 100%;
+    overflow: hidden;
+    border-radius: 12px;
+}
+.slides {
+    width: 300%;
+    display: flex;
+    animation: slide 12s infinite;
+}
+.slides img {
+    width: 100%;
+}
+@keyframes slide {
+    0% {margin-left: 0;}
+    33% {margin-left: -100%;}
+    66% {margin-left: -200%;}
+    100% {margin-left: 0;}
+}
+</style>
+</head>
+
+<body>
+
+<!-- LOADING -->
+<div id="loader">Loading...</div>
+
+<!-- DARK MODE BUTTON -->
+<button id="darkBtn">Dark Mode</button>
+
+<!-- SIDEBAR -->
+<div class="sidebar">
+    <h2>📌 Menu</h2>
+    <a href="#home">🏠 Home</a>
+    <a href="#tourism">🎡 Tourism</a>
+    <a href="#food">🍽 Culinary</a>
+    <a href="#culture">🎭 Culture</a>
+    <a href="#author">👤 Author</a>
+</div>
+
+<!-- HERO -->
+<div class="hero" id="home">
+    <h1>Welcome to Madiun City</h1>
+</div>
+
+<!-- CONTENT -->
+<div class="content">
+
+<!-- TOURISM -->
+<section id="tourism">
+    <h1>🎡 Madiun Tourism</h1>
+    <p>Enjoy the beauty of Madiun landmarks such as the famous city square, parks, and the legendary railway station.</p>
+
+    <!-- Foto ASLI Wisata Madiun -->
+    <img src="https://upload.wikimedia.org/wikipedia/commons/e/eb/Stasiun_Madiun_2020.jpg">
+</section>
+
+<!-- CULINARY -->
+<section id="food">
+    <h1>🍽 Culinary – Pecel Madiun</h1>
+    <p>The authentic taste of Madiun’s Pecel is well known across Indonesia.</p>
+
+    <!-- Foto asli PECEL MADIUN -->
+    <img src="https://upload.wikimedia.org/wikipedia/commons/4/46/Nasi_Pecel%2C_Madiun.JPG">
+</section>
+
+<!-- CULTURE -->
+<section id="culture">
+    <h1>🎭 Culture – Pencak Silat</h1>
+    <p>Madiun is the birthplace of several major Pencak Silat schools in Indonesia.</p>
+
+    <!-- Foto pencak silat -->
+    <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/Pencak_Silat_IPSI.jpg">
+</section>
+
+<!-- AUTHOR -->
+<section id="author">
+    <h1>👤 Author</h1>
+    <p><b>Name:</b> GADING SATRIYO PINILIH</p>
+    <p><b>Class:</b> 9A</p>
+    <p><b>No. Absen:</b> 11</p>
+</section>
+
+</div>
+
+<!-- SCROLL TOP -->
+<button id="toTop">↑</button>
+
+<!-- MUSIC -->
+<audio autoplay loop>
+    <source src="https://files.freemusicarchive.org/storage-freemusicarchive-org/music/no_curator/Scott_Holmes_Music/Happy_Music/Scott_Holmes_Music_-_Upbeat_Party.mp3" type="audio/mp3">
+</audio>
+
+<script>
+// DARK MODE
+document.getElementById("darkBtn").onclick = () => {
+    document.body.classList.toggle("dark");
+};
+
+// SCROLL BUTTON
+window.onscroll = function() {
+    document.getElementById("toTop").style.display =
+        document.documentElement.scrollTop > 250 ? "block" : "none";
+};
+document.getElementById("toTop").onclick = () => {
+    window.scrollTo({top:0, behavior:"smooth"});
+};
+</script>
+
+</body>
+</html>
